@@ -44,6 +44,8 @@ export FLANN_VERSION=1.9.1
 #PCL
 export PCL_VERSION=1.11.1
 
+export PERIHPX=main
+
 #Eigen
 export EIGEN_VERSION=3.2.10
 # Max number of parallel jobs

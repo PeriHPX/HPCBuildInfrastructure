@@ -4,19 +4,18 @@ set -ex
 
 : ${SOURCE_ROOT:?} ${INSTALL_ROOT:?} ${GCC_VERSION:?} ${VTK_VERSION:?}
 
-DIR_SRC=${SOURCE_ROOT}/nl
-#DIR_BUILD=${INSTALL_ROOT}/jemalloc/build
-DIR_INSTALL=${INSTALL_ROOT}/nl
-FILE_MODULE=${INSTALL_ROOT}/modules/nl/${NL_VERSION}
+DIR_SRC=${SOURCE_ROOT}/PeriHPX
+DIR_INSTALL=${INSTALL_ROOT}/PeriHPX
+FILE_MODULE=${INSTALL_ROOT}/modules/nl/${PERIHPX_VERSION}
 
 
 if [[ ! -d ${DIR_INSTALL} ]]; then
     (
         mkdir -p ${DIR_SRC}
         cd ${DIR_SRC} 
-        git clone https://github.com/nonlocalmodels/NLMech.git
-        cd NLMech 
-        git checkout ${NL_VERSION}
+        git clone https://github.com/PeriHPX/PeriHPX.git
+        cd PeriHPX 
+        git checkout ${PERIHPX_VERSION}
         mkdir -p build 
         cd build 
         ${CMAKE_COMMAND} \
@@ -60,7 +59,7 @@ prepend-path    MANPATH            \$root/share/man
 prepend-path    LD_LIBRARY_PATH    \$root/lib
 prepend-path    LIBRARY_PATH       \$root/lib
 prepend-path    PKG_CONFIG_PATH    \$root/lib/pkgconfig
-setenv          NL_ROOT      \$root
-setenv          NL_VERSION   ${NL_VERSION}
+setenv          PERIHPX_ROOT      \$root
+setenv          PERIHPX_VERSION   ${PERIHPX_VERSION}
 EOF
 
