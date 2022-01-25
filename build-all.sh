@@ -95,16 +95,6 @@ while [[ -n $3 ]]; do
             export BUILD_TARGET_VTK=
             shift
         ;;
-        flann)
-            echo 'Target flann will build.'
-            export BUILD_TARGET_FLANN=
-            shift
-        ;;
-        pcl)
-            echo 'Target pcl will build.'
-            export BUILD_TARGET_PCL=
-            shift
-        ;;
         perihpx)
             echo 'Target hpx will build.'
             export BUILD_TARGET_PERIHPX=
