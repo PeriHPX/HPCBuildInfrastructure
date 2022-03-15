@@ -8,6 +8,8 @@ DIR_SRC=${SOURCE_ROOT}/PeriHPX
 DIR_INSTALL=${INSTALL_ROOT}/PeriHPX
 FILE_MODULE=${INSTALL_ROOT}/modules/nl/${PERIHPX_VERSION}
 
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/diehlpk/Compile/HPCBuildInfrastructure/build/vtk/lib64/
+export LIBRARY_PATH=$LIBRARY_PATH:/home/diehlpk/Compile/HPCBuildInfrastructure/build/vtk/lib64/
 
 if [[ ! -d ${DIR_INSTALL} ]]; then
     (
@@ -32,8 +34,6 @@ if [[ ! -d ${DIR_INSTALL} ]]; then
         -DBOOST_ROOT=${BOOST_ROOT} \
         -DVTK_DIR="${INSTALL_ROOT}/vtk/lib64/cmake/vtk-${VTK_VERSION::-2}" \
         -DGMSH_DIR="${INSTALL_ROOT}/gmsh/" \
-        -DEnable_PCL=ON \
-        -DPCL_DIR="${INSTALL_ROOT}/pcl/share/pcl-${PCL_VERSION::-2}" \
         -DEnable_Tools=ON \
         .. 
         make -j${PARALLEL_BUILD}

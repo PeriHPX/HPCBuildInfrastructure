@@ -7,7 +7,7 @@ set -ex
 DIR_SRC=${SOURCE_ROOT}/vtk
 #DIR_BUILD=${INSTALL_ROOT}/jemalloc/build
 DIR_INSTALL=${INSTALL_ROOT}/vtk
-FILE_MODULE=${INSTALL_ROOT}/modules/vtk/${VTK_VERSION}
+FILE_MODULE=${INSTALL_ROOT}/modules/${VTK_VERSION::-2}/${VTK_VERSION}
 
 DOWNLOAD_URL="https://www.vtk.org/files/release/9.1/VTK-${VTK_VERSION}.tar.gz"
 
