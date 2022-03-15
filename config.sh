@@ -36,7 +36,7 @@ export GCC_VERSION=9.3.0
 export HPX_VERSION=1.7.1
 
 # VTK 
-export VTK_VERSION=9.0.1
+export VTK_VERSION=9.1.0
 
 #FLANN
 export FLANN_VERSION=1.9.1

@@ -9,7 +9,7 @@ DIR_SRC=${SOURCE_ROOT}/vtk
 DIR_INSTALL=${INSTALL_ROOT}/vtk
 FILE_MODULE=${INSTALL_ROOT}/modules/vtk/${VTK_VERSION}
 
-DOWNLOAD_URL="https://www.vtk.org/files/release/9.0/VTK-${VTK_VERSION}.tar.gz"
+DOWNLOAD_URL="https://www.vtk.org/files/release/9.1/VTK-${VTK_VERSION}.tar.gz"
 
 if [[ ! -d ${DIR_INSTALL} ]]; then
     (
