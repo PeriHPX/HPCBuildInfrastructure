@@ -38,18 +38,10 @@ export HPX_VERSION=1.7.1
 # VTK 
 export VTK_VERSION=9.1.0
 
-#FLANN
-export FLANN_VERSION=1.9.1
-
-#PCL
-export PCL_VERSION=1.11.1
-
 #GMSH
 export GMSH_VERSION=4.9.1
 
 export PERIHPX=main
 
-#Eigen
-export EIGEN_VERSION=3.2.10
 # Max number of parallel jobs
 export PARALLEL_BUILD=$(grep -c ^processor /proc/cpuinfo)
