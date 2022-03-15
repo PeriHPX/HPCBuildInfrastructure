@@ -76,27 +76,32 @@ while [[ -n $3 ]]; do
             shift
         ;;
         blaze)
-            echo 'Target hpx will build.'
+            echo 'Target HPX will build.'
             export BUILD_TARGET_BLAZE=
             shift
         ;;
         blazeIterative)
-            echo 'Target hpx will build.'
+            echo 'Target blaze_iterative will build.'
             export BUILD_TARGET_BLAZE_ITERATIVE=
             shift
         ;;
         yamlcpp)
-            echo 'Target hpx will build.'
+            echo 'Target YAMLCPP will build.'
             export BUILD_TARGET_YAMLCPP=
             shift
         ;;
         vtk)
-            echo 'Target hpx will build.'
+            echo 'Target VTK will build.'
             export BUILD_TARGET_VTK=
             shift
         ;;
+        gmsh)
+            echo 'Target gmsh will build.'
+            export BUILD_TARGET_GMSH=
+            shift
+        ;;
         perihpx)
-            echo 'Target hpx will build.'
+            echo 'Target PeriHPX will build.'
             export BUILD_TARGET_PERIHPX=
             shift
         ;;
@@ -121,6 +126,7 @@ if [[ -z ${!BUILD_TARGET_@} ]]; then
     export BUILD_TARGET_BLAZE_ITERATIVE=
     export BUILD_TARGET_YAMLCPP=
     export BUILD_TARGET_VTK=
+    export BUILD_TARGET_GMSH=
     export BUILD_TARGET_PERIHPX=
 fi
 
@@ -206,6 +212,11 @@ source gcc-config.sh
 (
     echo "Building VTK"
     ./build-vtk.sh
+)
+[[ -n ${BUILD_TARGET_GMSH+x} ]] && \
+(
+    echo "Building GMSH"
+    ./build-gmsh.sh
 )
 [[ -n ${BUILD_TARGET_FLANN+x} ]] && \
 (
