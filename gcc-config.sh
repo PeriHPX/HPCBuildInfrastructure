@@ -16,7 +16,7 @@ fi
 export CFLAGS=-fPIC
 export LDCXXFLAGS="${LDFLAGS} -std=c++14 "
 
-case $(uname -i) in
+case $(uname -m) in
     ppc64le)
         export CXXFLAGS="-fPIC -mcpu=native -mtune=native -ffast-math -std=c++14 "
         export LIBHPX=lib64
