@@ -8,8 +8,8 @@ DIR_SRC=${SOURCE_ROOT}/PeriHPX
 DIR_INSTALL=${INSTALL_ROOT}/PeriHPX
 FILE_MODULE=${INSTALL_ROOT}/modules/nl/${PERIHPX_VERSION}
 
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/diehlpk/Compile/HPCBuildInfrastructure/build/vtk/lib64/
-export LIBRARY_PATH=$LIBRARY_PATH:/home/diehlpk/Compile/HPCBuildInfrastructure/build/vtk/lib64/
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${INSTALL_ROOT}/vtk/lib64/
+export LIBRARY_PATH=$LIBRARY_PATH:${INSTALL_ROOT}vtk/lib64/
 
 if [[ ! -d ${DIR_INSTALL} ]]; then
     (
