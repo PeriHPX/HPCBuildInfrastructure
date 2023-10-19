@@ -37,9 +37,9 @@ mkdir -p $(dirname ${FILE_MODULE})
 cat >${FILE_MODULE} <<EOF
 #%Module
 proc ModulesHelp { } {
-  puts stderr {blaze}
+  puts stderr {vtk}
 }
-module-whatis {blaze}
+module-whatis {vtk}
 set root    ${DIR_INSTALL}
 conflict    blaze
 module load gcc/${GCC_VERSION}
@@ -51,7 +51,7 @@ prepend-path    MANPATH            \$root/share/man
 prepend-path    LD_LIBRARY_PATH    \$root/lib
 prepend-path    LIBRARY_PATH       \$root/lib
 prepend-path    PKG_CONFIG_PATH    \$root/lib/pkgconfig
-setenv          blaze_ROOT      \$root
-setenv          blaze_VERSION   ${BLAZE_VERSION}
+setenv          vtk_ROOT      \$root
+setenv          vtk_VERSION   ${VTK_VERSION}
 EOF
 
